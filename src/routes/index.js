@@ -7,4 +7,3 @@ const siteRouter = require('./site');
 }
 
         module.exports = route;
-    
