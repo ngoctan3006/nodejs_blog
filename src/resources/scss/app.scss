@@ -1,1 +1,6 @@
 @import 'variables';
+.course-name,
+.course-name:hover {
+    text-decoration: none;
+    color: inherit;
+}
