@@ -9,7 +9,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Tên khoá học</th>
                 <th scope="col">Trình độ</th>
-                <th scope="col" colspan="2">Thời gian tạo</th>
+                <th scope="col" colspan="2">Thời gian xoá</th>
             </tr>
         </thead>
         <tbody>
@@ -18,7 +18,7 @@
                 <th scope="row">{{sum @index 1}}</th>
                 <td>{{this.name}}</td>
                 <td>{{this.level}}</td>
-                <td>{{this.createdAt}}</td>
+                <td>{{this.deletedAt}}</td>
                 <td>
                     <a href="#" class="btn btn-link btn-restore" data-id="{{this._id}}">Khôi phục</a>
                     <a href="#" class="btn btn-link" data-id="{{this._id}}" data-toggle="modal" data-target="#delete-course-modal">Xoá vĩnh viễn</a>
@@ -60,7 +60,7 @@
 <form name="restore-course-form" method="POST"></form>
 
 <script>
-    document.addEventListener('DOMContentLoaded', e => {
+    document.addEventListener('DOMContentLoaded', () => {
         let courseId;
         const deleteCourseBtn = document.getElementById('btn-delete-course');
         const deleteForm = document.forms['delete-course-form'];
