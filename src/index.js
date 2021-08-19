@@ -5,6 +5,7 @@ const path = require('path');
 const app = express();
 const route = require('./routes');
 const db = require('./config/db');
+const methodOverride = require('method-override');
 const port = 3000;
 
 // Connect to DB
@@ -19,11 +20,16 @@ app.use(
 );
 app.use(express.json());
 
+app.use(methodOverride('_method'));
+
 // Template engine
 app.engine(
     'hbs',
     handlebars({
         extname: '.hbs',
+        helpers: {
+            sum: (a, b) => a + b,
+        },
     }),
 );
 app.set('view engine', 'hbs');
