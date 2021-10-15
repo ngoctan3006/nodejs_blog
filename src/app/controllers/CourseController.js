@@ -37,7 +37,7 @@ class CourseController {
         course
             .save()
             .then(() => res.redirect('/me/stored/courses'))
-            .catch((err) => res.send('ERROR!' + err));
+            .catch(next);
     }
 
     // [PUT] /courses/:id
